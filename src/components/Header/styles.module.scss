@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 700;
+    margin: 15px;
+  }
+}

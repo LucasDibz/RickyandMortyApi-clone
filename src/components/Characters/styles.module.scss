@@ -1,0 +1,14 @@
+.container {
+  margin: 3rem 0 0 0;
+  background: #24282f;
+  flex: 1;
+}
+
+.cardsContainer {
+  display: flex;
+  padding: 4rem 0rem;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 10%;
+}
