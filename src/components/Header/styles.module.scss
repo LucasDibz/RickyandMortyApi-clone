@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 15px;
+  margin: 0 0.5rem;
 
   div {
     display: flex;
@@ -10,5 +10,16 @@
     gap: 20px;
     font-weight: 700;
     margin: 15px;
+  }
+
+  a:nth-last-child(1) {
+    font-size: 0.75rem;
+    border: 1px solid rgb(255, 152, 0);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+
+  a:hover {
+    color: rgb(255, 152, 0);
   }
 }

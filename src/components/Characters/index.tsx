@@ -1,52 +1,36 @@
 import { Card } from '../Card';
 
-import { useEffect, useState } from 'react';
-
 import styles from './styles.module.scss';
-
-type Character = {
-  name: string;
-  status: string;
-  species: string;
-  image: string;
-  location: {
-    name: string;
-  };
-  firstSeen?: string;
-  episode: string[];
-};
+import { useCharacters } from '../../contexts/useCharacters';
 
 export function Characters() {
-  const [characters, SetCharacters] = useState<Character[]>([]);
+  const { characters, next, prev, setURL } = useCharacters();
 
-  useEffect(() => {
-    async function loadChar() {
-      const data = await fetch('https://rickandmortyapi.com/api/character');
-      const { results }: { results: Character[] } = await data.json();
-
-      let chars = [];
-      for await (const character of results) {
-        const data = await fetch(character.episode[0]);
-        const { name: firstSeen } = await data.json();
-
-        chars.push({
-          firstSeen,
-          ...character,
-        });
-      }
-
-      SetCharacters(chars);
-    }
-    loadChar();
-  }, []);
-
-  return (
-    <div className={styles.container}>
-      <div className={styles.cardsContainer}>
-        {characters.map((character) => (
-          <Card character={character} key={character.name} />
-        ))}
+  if (!characters) {
+    return (
+      <div className={styles.loadingContainer}>
+        <h1>Loading...</h1>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (characters) {
+    return (
+      <div className={styles.container}>
+        <nav>
+          <button onClick={() => setURL(prev ?? '')} disabled={!prev}>
+            Prev
+          </button>
+          <button onClick={() => setURL(next ?? '')} disabled={!next}>
+            Next
+          </button>
+        </nav>
+        <div className={styles.cardsContainer}>
+          {characters.map((character) => (
+            <Card character={character} key={character.id} />
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
