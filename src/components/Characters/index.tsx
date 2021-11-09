@@ -6,14 +6,6 @@ import { useCharacters } from '../../contexts/useCharacters';
 export function Characters() {
   const { characters, next, prev, setURL } = useCharacters();
 
-  if (!characters) {
-    return (
-      <div className={styles.loadingContainer}>
-        <h1>Loading...</h1>
-      </div>
-    );
-  }
-
   if (characters) {
     return (
       <div className={styles.container}>
@@ -33,4 +25,10 @@ export function Characters() {
       </div>
     );
   }
+
+  return (
+    <div className={styles.loadingContainer}>
+      <h1>Loading...</h1>
+    </div>
+  );
 }
