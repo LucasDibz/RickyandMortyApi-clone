@@ -1,14 +1,11 @@
-import { useState } from 'react';
-import Link from 'next/link';
+import { useCharacters } from '../../contexts/useCharacters';
 
-import { useCharacters } from '../../hooks/useCharacters';
 import { Card } from '../Card';
 
 import styles from './styles.module.scss';
 
 export function Characters() {
-  const [pageIndex, SetPageIndex] = useState(1);
-  const { characters, next, prev } = useCharacters(pageIndex);
+  const { characters, next, prev, setURL } = useCharacters();
 
   if (!characters)
     return (
@@ -20,10 +17,10 @@ export function Characters() {
   return (
     <div className={styles.container}>
       <nav>
-        <button onClick={() => SetPageIndex(pageIndex - 1)} disabled={!prev}>
+        <button onClick={() => prev && setURL(prev)} disabled={!prev}>
           Prev
         </button>
-        <button onClick={() => SetPageIndex(pageIndex + 1)} disabled={!next}>
+        <button onClick={() => next && setURL(next)} disabled={!next}>
           Next
         </button>
       </nav>
