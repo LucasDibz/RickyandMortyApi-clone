@@ -3,7 +3,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This basically if a clone from https://rickandmortyapi.com/ landing page with pagination
+This is basically a clone from https://rickandmortyapi.com/ landing page with pagination
 
 Each branch is dealing with data fetching in a different way
 
