@@ -8,7 +8,7 @@ This is basically a clone from https://rickandmortyapi.com/ landing page with pa
 Each branch is dealing with data fetching in a different way
 
 ### main
-> Using pain React.js features such as Context API
+> Using plain React.js features such as Context API
 
 ### useSWR
 > Data fetching through useSWR hook from [@vercel](https://swr.vercel.app/)
