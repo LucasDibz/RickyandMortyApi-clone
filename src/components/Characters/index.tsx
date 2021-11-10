@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useSWR from 'swr';
+
 import { useCharacters } from '../../hooks/useCharacters';
 import { Card } from '../Card';
 
