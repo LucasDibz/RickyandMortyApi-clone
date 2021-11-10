@@ -20,9 +20,6 @@ export function Characters() {
   return (
     <div className={styles.container}>
       <nav>
-        <Link href='/characters/1'>
-          <a>Static Site</a>
-        </Link>
         <button onClick={() => SetPageIndex(pageIndex - 1)} disabled={!prev}>
           Prev
         </button>
