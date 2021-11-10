@@ -61,8 +61,30 @@ export const getStaticProps: GetStaticProps<SSGCharactersProps, Params> =
       };
     }
 
+    // Generate firstSeen prop with Promise.all
+
+    // const promiseArray = data.results.map(async (character) => {
+    //   const firstSeen = await fetcher(character.episode[0]);
+
+    //   return {
+    //     ...character,
+    //     firstSeen: firstSeen.name,
+    //   };
+    // });
+    // const characters = await Promise.all(promiseArray);
+
+    // OR with for await as below
+    let characters: Character[] = [];
+    for await (const character of data.results) {
+      const firstSeen = await fetcher(character.episode[0]);
+      characters.push({
+        ...character,
+        firstSeen: firstSeen.name,
+      });
+    }
+
     const props = {
-      characters: data.results,
+      characters,
       next: data.info.next,
       prev: data.info.prev,
       pageIndex: Number(page),
