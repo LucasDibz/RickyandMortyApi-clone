@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 import { useCharacters } from '../../hooks/useCharacters';
 import { Card } from '../Card';
@@ -19,6 +20,9 @@ export function Characters() {
   return (
     <div className={styles.container}>
       <nav>
+        <Link href='/characters/1'>
+          <a>Static Site</a>
+        </Link>
         <button onClick={() => SetPageIndex(pageIndex - 1)} disabled={!prev}>
           Prev
         </button>

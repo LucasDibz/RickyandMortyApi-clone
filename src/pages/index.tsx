@@ -2,14 +2,13 @@ import type { NextPage } from 'next';
 
 import { Characters } from '../components/Characters';
 import { Header } from '../components/Header';
-
-import styles from '../styles/Home.module.scss';
+import { Title } from '../components/Title';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Header />
-      <h1>The Rick and Morty API</h1>
+      <Title />
       <Characters />
       {/* <Footer /> */}
     </div>

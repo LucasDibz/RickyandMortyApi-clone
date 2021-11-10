@@ -12,6 +12,16 @@
     margin: 15px;
   }
 
+  div:first-child {
+    cursor: pointer;
+
+    transition: 0.2s filter ease-in-out;
+
+    &:hover {
+      filter: contrast(0.3);
+    }
+  }
+
   a:nth-last-child(1) {
     font-size: 0.75rem;
     border: 1px solid rgb(255, 152, 0);
