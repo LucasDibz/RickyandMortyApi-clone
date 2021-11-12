@@ -1,7 +1,7 @@
 ![image](https://user-images.githubusercontent.com/49247275/141107117-d3ff6750-18b9-45f7-aeba-806915868410.png)
 
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app --typescript`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). 
 
 This is basically a clone from https://rickandmortyapi.com/ landing page with pagination
 
